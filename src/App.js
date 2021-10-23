@@ -1,10 +1,12 @@
 import SearchBar from "./components/SearchBar";
+import UserDashBoard from "./components/UserDashboard";
 
 function App() {
   return (
     <div>
-      <h1>Hello world</h1>
+      <h1>devfinder</h1>
       <SearchBar />
+      <UserDashBoard />
     </div>
   );
 }
