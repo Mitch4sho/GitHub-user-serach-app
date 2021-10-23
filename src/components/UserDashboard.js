@@ -1,39 +1,44 @@
 import React from "react";
 
-const UserDashBoard = () => {
+const UserDashBoard = ({ user }) => {
+  console.log(user);
   return (
     <div className="dashboard" style={{ marginTop: "30px" }}>
-      <img src="" alt="" className="userProfilePic" />
-      <p className="name">The Octocat</p>
-      <p className="username">@octocat</p>
-      <p className="join-date">Joined 25 Jan 2011</p>
-      <p className="profile-bio">this profile has no bio</p>
+      <img
+        src={user.avatar_url}
+        alt="ProfilePhoto"
+        className="userProfilePic"
+      />
+      <p className="name">{user.name}</p>
+      <p className="username">{user.login}</p>
+      <p className="join-date">Joined {user.created_at}</p>
+      <p className="profile-bio">{user.bio}</p>
       <ul className="container">
         <li className="repos">
           <p>Repos</p>
-          <p>8</p>
+          <p>{user.public_repos}</p>
         </li>
         <li className="followers">
           <p>Followers</p>
-          <p>3938</p>
+          <p>{user.followers}</p>
         </li>
         <li className="following">
           <p>Following</p>
-          <p>9</p>
+          <p>{user.following}</p>
         </li>
       </ul>
       <ul className="gridContainer">
         <li>
-          <p>Location</p>
+          <p>{user.location}</p>
         </li>
         <li>
-          <p>Twitter</p>
+          <p>{user.twitter_username}</p>
         </li>
         <li>
-          <p>Link</p>
+          <p>{user.blog}</p>
         </li>
         <li>
-          <p>Work Location</p>
+          <p>{user.company}</p>
         </li>
       </ul>
     </div>

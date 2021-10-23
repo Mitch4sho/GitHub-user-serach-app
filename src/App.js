@@ -13,7 +13,8 @@ function App() {
     })
       .then((response) => response.json())
       .then((response) => {
-        console.log(response);
+        // console.log(response);
+        setCurrentUser(response);
       })
       .catch((err) => {
         console.log(err);
@@ -24,7 +25,7 @@ function App() {
     <div>
       <h1>devfinder</h1>
       <SearchBar onSearch={search} />
-      <UserDashBoard />
+      <UserDashBoard user={currentUser} />
     </div>
   );
 }
