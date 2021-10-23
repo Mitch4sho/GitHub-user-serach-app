@@ -1,18 +1,18 @@
 import React, { useState } from "react";
 
 const SearchBar = () => {
-  const [user, setUser] = useState("");
+  const [username, setUsername] = useState("");
 
   const search = (e) => {
     console.log("------searching------");
     e.preventDefault();
-    fetch(`https://api.github.com/users/${user}`, {
+    fetch(`https://api.github.com/users/${username}`, {
       method: "GET",
     })
       .then((response) => response.json())
       .then((response) => {
         console.log(response);
-        setUser("");
+        setUsername("");
       })
       .catch((err) => {
         console.log(err);
@@ -25,8 +25,8 @@ const SearchBar = () => {
         type="text"
         placeholder="Search Github username..."
         name="searchbox"
-        value={user}
-        onChange={(e) => setUser(e.target.value)}
+        value={username}
+        onChange={(e) => setUsername(e.target.value)}
       />
       <button onClick={(e) => search(e)}>Search</button>
     </form>
