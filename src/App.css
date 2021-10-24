@@ -1,0 +1,59 @@
+:root {
+  /* Light Mode colors */
+  --blue-light-mode: #0079ff;
+  --grey-light-mode: #697c9a;
+  --dark-blue-light-mode: #4b6a9b;
+  --black-light-mode: #2b3442;
+  --main-bg-light-mode: #f6f8ff;
+  --white-light-mode: #fefefe;
+
+  /* Dark Mode colors */
+  --blue-dark-mode: #0079ff;
+  --white-dark-mode: #ffffff;
+  --black-dark-mode: #141d2f;
+  --dark-blue-dark-mode: #1e2a47;
+}
+
+.App {
+  width: 730px;
+  height: 100vh;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: "Space Mono", monospace;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+/* title */
+.title-container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 32px;
+}
+
+.title-container .title {
+  font-weight: 700;
+  font-style: normal;
+  font-size: 26px;
+}
+
+.dark-mode-button {
+  display: flex;
+  justify-content: space-between;
+}
+
+.dark-mode-button > p {
+  width: 40px;
+  height: 19px;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 13px;
+  color: var(--grey-light-mode);
+}
+
+.dark-mode-button > img {
+  width: 20px;
+  height: 20px;
+  color: var(--grey-light-mode);
+}
