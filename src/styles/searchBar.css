@@ -1,0 +1,63 @@
+:root {
+  /* Light Mode colors */
+  --blue-light-mode: #0079ff;
+  --grey-light-mode: #697c9a;
+  --dark-blue-light-mode: #4b6a9b;
+  --black-light-mode: #2b3442;
+  --main-bg-light-mode: #f6f8ff;
+  --white-light-mode: #fefefe;
+
+  /* Dark Mode colors */
+  --blue-dark-mode: #0079ff;
+  --white-dark-mode: #ffffff;
+  --black-dark-mode: #141d2f;
+  --dark-blue-dark-mode: #1e2a47;
+}
+
+.search-bar {
+  background-color: var(--white-light-mode);
+  padding: 18px;
+  text-align: center;
+  font-family: "Space Mono", monospace;
+  border-radius: 15px;
+  box-shadow: 0px 16px 30px -10px rgba(70, 96, 187, 0.198567);
+}
+
+.search-bar > form {
+  display: flex;
+  justify-content: space-between;
+}
+
+.search-bar > form > div {
+  flex-grow: 1;
+
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.magnify-glass {
+  width: 24px;
+  height: 24px;
+}
+
+.search-box {
+  width: 75%;
+  font-family: "Space Mono", monospace;
+  font-size: 18px;
+  font-weight: 400;
+  font-style: normal;
+  border-style: none;
+}
+
+.search-button {
+  padding: 16px 24px;
+  background-color: var(--blue-light-mode);
+  color: var(--white-light-mode);
+  border: none;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 16px;
+  font-family: "Space Mono", monospace;
+  text-align: center;
+}

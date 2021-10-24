@@ -1,1 +1,1 @@
-- This GitHub user search app uses React.js the GitHub users API (https://docs.github.com/en/rest/reference/users#get-a-user).
+- This GitHub user search app uses React.js for the UI, CSS for the styling, and the GitHub users API (https://docs.github.com/en/rest/reference/users#get-a-user).
