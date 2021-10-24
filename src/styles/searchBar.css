@@ -16,6 +16,7 @@
 
 .search-bar {
   background-color: var(--white-light-mode);
+  margin-bottom: 30px;
   padding: 18px;
   text-align: center;
   font-family: "Space Mono", monospace;
