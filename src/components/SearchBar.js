@@ -2,13 +2,12 @@ import React, { useState } from "react";
 import "../styles/searchBar.css";
 import MagnifyGlass from "../assets/icon-search.svg";
 
-const SearchBar = ({ onSearch }) => {
+const SearchBar = ({ onSearch, user, initialLoad }) => {
   const [username, setUsername] = useState("");
-
   return (
     <div className="search-bar">
       <form>
-        <div>
+        <div className="search-box-container">
           <img
             className="magnify-glass"
             src={MagnifyGlass}
@@ -23,15 +22,20 @@ const SearchBar = ({ onSearch }) => {
             onChange={(e) => setUsername(e.target.value)}
           />
         </div>
-        <button
-          className="search-button"
-          onClick={(e) => {
-            onSearch(e, username);
-            setUsername("");
-          }}
-        >
-          Search
-        </button>
+        <div className="button-container">
+          {/* <p className={Object.keys(user).length ? noResults : "results"}>
+            No results
+          </p> */}
+          <button
+            className="search-button"
+            onClick={(e) => {
+              onSearch(e, username);
+              setUsername("");
+            }}
+          >
+            Search
+          </button>
+        </div>
       </form>
     </div>
   );
