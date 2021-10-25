@@ -32,6 +32,7 @@ button:focus {
   flex-direction: column;
   justify-content: center;
 }
+
 /* title */
 .title-container {
   display: flex;
@@ -49,19 +50,25 @@ button:focus {
 .dark-mode-button {
   display: flex;
   justify-content: space-between;
+  gap: 16px;
 }
 
-.dark-mode-button > p {
+.dark-mode-button > button {
   width: 40px;
   height: 19px;
   font-weight: 700;
   font-style: normal;
-  font-size: 13px;
+  font-size: 14px;
+  font-family: "Space Mono", monospace;
   color: var(--grey-light-mode);
+  background-color: var(--main-bg-light-mode);
+  border: none;
 }
 
-.dark-mode-button > img {
-  width: 20px;
-  height: 20px;
-  color: var(--grey-light-mode);
+.dark-mode-button > button:hover {
+  color: var(--black-light-mode);
 }
+
+/* svg:hover {
+  fill: red;
+} */

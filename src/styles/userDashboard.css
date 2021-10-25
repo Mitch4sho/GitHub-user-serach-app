@@ -150,3 +150,8 @@ li {
   color: var(--dark-blue-light-mode);
   text-decoration: none;
 }
+
+.grid-container > li > p > a:hover {
+  color: var(--dark-blue-light-mode);
+  text-decoration: underline;
+}

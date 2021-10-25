@@ -6,13 +6,6 @@ import LinkIcon from "../assets/icon-website.svg";
 import WorkIcon from "../assets/icon-company.svg";
 import "../styles/userDashboard.css";
 
-/*
-  TODO:
-  - NULL STATE WILL LOAD IF USER IS NOT FOUND
-
-  - CONTINUE TO FINISH STYLING ON USER DASHBOARD
-*/
-
 const getDate = (date) => {
   const months = [
     "Jan",
@@ -38,6 +31,8 @@ const getDate = (date) => {
 const UserDashBoard = ({ user }) => {
   const [initialLoad, setInitialLoad] = useState(true);
   const [joinDate, setJoinDate] = useState(null);
+
+  console.log(user);
 
   useEffect(() => {
     if (Object.keys(user).length) {
@@ -144,9 +139,12 @@ const UserDashBoard = ({ user }) => {
               </p>
             </li>
             <li>
-              <p className={user.twitter_username ? "" : "not-available"}>
+              <p>
                 <img src={TwitterIcon} alt="" />
-                <a href="">
+                <a
+                  className={user.twitter_username ? "" : "not-available"}
+                  href=""
+                >
                   {user.twitter_username
                     ? `@${user.twitter_username}`
                     : "Not Available"}
@@ -154,15 +152,22 @@ const UserDashBoard = ({ user }) => {
               </p>
             </li>
             <li>
-              <p className={user.blog ? "" : "not-available"}>
+              <p>
                 <img src={LinkIcon} alt="" />
-                <a href="">{user.blog ? user.blog : "Not Available"}</a>
+                <a
+                  className={user.blog ? "" : "not-available"}
+                  href={`${user.blog}`}
+                >
+                  {user.blog ? user.blog : "Not Available"}
+                </a>
               </p>
             </li>
             <li>
-              <p className={user.company ? "" : "not-available"}>
+              <p>
                 <img src={WorkIcon} alt="" />
-                <a href="">{user.company ? user.company : "Not Available"}</a>
+                <a className={user.company ? "" : "not-available"} href="">
+                  {user.company ? user.company : "Not Available"}
+                </a>
               </p>
             </li>
           </ul>
