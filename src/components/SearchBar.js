@@ -23,9 +23,7 @@ const SearchBar = ({ onSearch, user, initialLoad }) => {
           />
         </div>
         <div className="button-container">
-          {/* <p className={Object.keys(user).length ? noResults : "results"}>
-            No results
-          </p> */}
+          <p>No results</p>
           <button
             className="search-button"
             onClick={(e) => {

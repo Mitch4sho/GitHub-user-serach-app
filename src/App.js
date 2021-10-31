@@ -2,9 +2,36 @@ import React, { useState } from "react";
 import SearchBar from "./components/SearchBar";
 import UserDashBoard from "./components/UserDashboard";
 import "./App.css";
+/*
+- have a global state
+*/
+
+const getDate = (date) => {
+  const months = [
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "May",
+    "Jun",
+    "Jul",
+    "Aug",
+    "Sep",
+    "Oct",
+    "Nov",
+    "Dec",
+  ];
+  const year = new Date(date).getFullYear();
+  const month = months[new Date(date).getMonth()];
+  const day = new Date(date).getDate();
+
+  return [year, month, day];
+};
 
 function App() {
   const [currentUser, setCurrentUser] = useState({});
+  const [initialLoad, setInitialLoad] = useState(true);
+  const [joinDate, setJoinDate] = useState(null);
 
   const search = (e, username) => {
     e.preventDefault();
@@ -41,7 +68,14 @@ function App() {
         </div>
       </div>
       <SearchBar onSearch={search} />
-      <UserDashBoard user={currentUser} />
+      <UserDashBoard
+        user={currentUser}
+        initialLoad={initialLoad}
+        setInitialLoad={setInitialLoad}
+        joinDate={joinDate}
+        setJoinDate={setJoinDate}
+        getDate={getDate}
+      />
     </div>
   );
 }

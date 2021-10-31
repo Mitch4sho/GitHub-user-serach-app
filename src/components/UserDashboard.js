@@ -6,34 +6,14 @@ import LinkIcon from "../assets/icon-website.svg";
 import WorkIcon from "../assets/icon-company.svg";
 import "../styles/userDashboard.css";
 
-const getDate = (date) => {
-  const months = [
-    "Jan",
-    "Feb",
-    "Mar",
-    "Apr",
-    "May",
-    "Jun",
-    "Jul",
-    "Aug",
-    "Sep",
-    "Oct",
-    "Nov",
-    "Dec",
-  ];
-  const year = new Date(date).getFullYear();
-  const month = months[new Date(date).getMonth()];
-  const day = new Date(date).getDate();
-
-  return [year, month, day];
-};
-
-const UserDashBoard = ({ user }) => {
-  const [initialLoad, setInitialLoad] = useState(true);
-  const [joinDate, setJoinDate] = useState(null);
-
-  console.log(user);
-
+const UserDashBoard = ({
+  user,
+  initialLoad,
+  setInitialLoad,
+  joinDate,
+  setJoinDate,
+  getDate,
+}) => {
   useEffect(() => {
     if (Object.keys(user).length) {
       setInitialLoad(false);
