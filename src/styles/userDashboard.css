@@ -157,6 +157,12 @@ li {
 
 /* Tablet sizing */
 @media (max-width: 768px) {
+  .dashboard {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+
   .header-info {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -183,17 +189,54 @@ li {
     grid-column: 1 / span 3;
     grid-row: 4 / 4;
   }
-
-  .dashboard {
-    display: flex;
-    flex-direction: column;
-    gap: 32px;
-  }
 }
 
 /* Phone sizing */
-/* @media (max-width: 375px) {
-  .App {
-    width: 327px;
+@media (max-width: 375px) {
+  .dashboard {
+    padding: 32px 24px;
   }
-} */
+
+  .header-info {
+    column-gap: 19px;
+  }
+
+  .user-profile-pic {
+    width: 70px;
+    height: 70px;
+  }
+
+  .name {
+    font-size: 16px;
+  }
+
+  .username {
+    font-size: 13px;
+  }
+
+  .join-date {
+    font-size: 13px;
+  }
+
+  .profile-bio {
+    margin-top: 30px;
+    grid-column: 1 / span 4;
+  }
+
+  .info-container {
+    padding: 18px 14px;
+    justify-content: space-around;
+  }
+
+  .info-container > li {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .grid-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

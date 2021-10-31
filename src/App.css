@@ -80,5 +80,10 @@ button:focus {
 @media (max-width: 375px) {
   .App {
     width: 327px;
+    display: block;
+  }
+
+  .title-container {
+    margin-top: 32px;
   }
 }
