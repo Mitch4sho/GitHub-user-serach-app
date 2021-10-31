@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "../styles/searchBar.css";
 import MagnifyGlass from "../assets/icon-search.svg";
 
-const SearchBar = ({ onSearch, user, initialLoad }) => {
+const SearchBar = ({ onSearch, userNotFound }) => {
   const [username, setUsername] = useState("");
 
   return (
@@ -24,11 +24,7 @@ const SearchBar = ({ onSearch, user, initialLoad }) => {
           />
         </div>
         <div className="button-container">
-          {user.message === "Not Found" && !initialLoad ? (
-            <p className="no-results">No results</p>
-          ) : (
-            ""
-          )}
+          {userNotFound ? <p className="no-results">No results</p> : ""}
           <button
             className="search-button"
             onClick={(e) => {

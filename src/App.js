@@ -2,10 +2,6 @@ import React, { useState } from "react";
 import SearchBar from "./components/SearchBar";
 import UserDashBoard from "./components/UserDashboard";
 import "./App.css";
-/*
-TODO:
-  - refactor the grid styling so it works well with other responsive formats
-*/
 
 const getDate = (date) => {
   const months = [
@@ -33,6 +29,7 @@ function App() {
   const [currentUser, setCurrentUser] = useState({});
   const [initialLoad, setInitialLoad] = useState(true);
   const [joinDate, setJoinDate] = useState(null);
+  const [userNotFound, setUserNotFound] = useState(false);
 
   const search = (e, username) => {
     e.preventDefault();
@@ -41,7 +38,13 @@ function App() {
     })
       .then((response) => response.json())
       .then((response) => {
-        setCurrentUser(response);
+        if (response.message !== "Not Found") {
+          setCurrentUser(response);
+          setUserNotFound(false);
+        } else {
+          setCurrentUser(currentUser);
+          setUserNotFound(true);
+        }
       })
       .catch((err) => {
         console.log(err);
@@ -68,11 +71,7 @@ function App() {
           </svg>
         </div>
       </div>
-      <SearchBar
-        onSearch={search}
-        user={currentUser}
-        initialLoad={initialLoad}
-      />
+      <SearchBar onSearch={search} userNotFound={userNotFound} />
       <UserDashBoard
         user={currentUser}
         initialLoad={initialLoad}

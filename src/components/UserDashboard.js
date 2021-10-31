@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import Doge from "../assets/qZduXAEoyN41zQ223nXn0BgevlbnaobL0awPmBspcgw.jpg";
 import LocationIcon from "../assets/icon-location.svg";
 import TwitterIcon from "../assets/icon-twitter.svg";
@@ -23,7 +23,7 @@ const UserDashBoard = ({
   }, [user]);
 
   const userBlog = user.blog ? user.blog.split("//")[1] : "Not Available";
-  console.log(userBlog);
+
   return (
     <div>
       {initialLoad ? (
@@ -59,7 +59,11 @@ const UserDashBoard = ({
             <li>
               <p>
                 <img src={TwitterIcon} alt="" />
-                <a href="https://twitter.com/dogecoin?lang=en" target="_blank">
+                <a
+                  href="https://twitter.com/dogecoin?lang=en"
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   @dogecoin
                 </a>
               </p>
@@ -67,7 +71,7 @@ const UserDashBoard = ({
             <li>
               <p>
                 <img src={LinkIcon} alt="" />
-                <a href="https://dogecoin.com" target="_blank">
+                <a href="https://dogecoin.com" target="_blank" rel="noreferrer">
                   dogecoin.com
                 </a>
               </p>
@@ -75,7 +79,11 @@ const UserDashBoard = ({
             <li>
               <p>
                 <img src={WorkIcon} alt="" />
-                <a href="https://www.tesla.com" target="_blank">
+                <a
+                  href="https://www.tesla.com"
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   @tesla
                 </a>
               </p>
