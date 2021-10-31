@@ -158,15 +158,36 @@ li {
 /* Tablet sizing */
 @media (max-width: 768px) {
   .header-info {
-    display: block;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto auto auto 1fr;
+    row-gap: 4px;
   }
 
-  .user-info {
-    display: block;
-    grid-column: 1 / 2;
-    grid-row: 1 / span 2;
+  .name {
+    grid-row: 1 / 2;
+  }
+
+  .username {
+    grid-row: 2 / 3;
+  }
+
+  .join-date {
+    grid-column: 2 / span 2;
+    grid-row: 3 / 4;
+    justify-self: unset;
+  }
+
+  .profile-bio {
+    margin-top: 38px;
+    grid-column: 1 / span 3;
+    grid-row: 4 / 4;
+  }
+
+  .dashboard {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
   }
 }
 
