@@ -4,6 +4,7 @@ import MagnifyGlass from "../assets/icon-search.svg";
 
 const SearchBar = ({ onSearch, user, initialLoad }) => {
   const [username, setUsername] = useState("");
+
   return (
     <div className="search-bar">
       <form>
@@ -23,7 +24,11 @@ const SearchBar = ({ onSearch, user, initialLoad }) => {
           />
         </div>
         <div className="button-container">
-          <p>No results</p>
+          {user.message === "Not Found" && !initialLoad ? (
+            <p className="no-results">No results</p>
+          ) : (
+            ""
+          )}
           <button
             className="search-button"
             onClick={(e) => {

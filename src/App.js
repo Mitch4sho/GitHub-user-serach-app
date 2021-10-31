@@ -67,7 +67,11 @@ function App() {
           </svg>
         </div>
       </div>
-      <SearchBar onSearch={search} />
+      <SearchBar
+        onSearch={search}
+        user={currentUser}
+        initialLoad={initialLoad}
+      />
       <UserDashBoard
         user={currentUser}
         initialLoad={initialLoad}
