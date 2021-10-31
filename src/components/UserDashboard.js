@@ -22,18 +22,18 @@ const UserDashBoard = ({
     }
   }, [user]);
 
+  const userBlog = user.blog ? user.blog.split("//")[1] : "Not Available";
+  console.log(userBlog);
   return (
     <div>
       {initialLoad ? (
         <div className="dashboard">
           <header className="header-info">
             <img src={Doge} alt="ProfilePhoto" className="user-profile-pic" />
-            <div className="user-info">
-              <p className="name">Doge</p>
-              <p className="username">@dogeman</p>
-              <p className="join-date">Joined 25 Jan 2011</p>
-              <p className="profile-bio">Will Dogecoin hit $1</p>
-            </div>
+            <p className="name">Doge</p>
+            <p className="username">@dogeman</p>
+            <p className="join-date">Joined 25 Jan 2011</p>
+            <p className="profile-bio">Will Dogecoin hit $1</p>
           </header>
           <ul className="info-container">
             <li className="repos">
@@ -90,12 +90,10 @@ const UserDashBoard = ({
               alt="ProfilePhoto"
               className="user-profile-pic"
             />
-            <div className="user-info">
-              <p className="name">{user.name}</p>
-              <p className="username">@{user.login}</p>
-              <p className="join-date">{`Joined ${joinDate[2]} ${joinDate[1]} ${joinDate[0]}`}</p>
-              <p className="profile-bio">{user.bio}</p>
-            </div>
+            <p className="name">{user.name}</p>
+            <p className="username">@{user.login}</p>
+            <p className="join-date">{`Joined ${joinDate[2]} ${joinDate[1]} ${joinDate[0]}`}</p>
+            <p className="profile-bio">{user.bio}</p>
           </header>
           <ul className="info-container">
             <li className="repos">
@@ -138,7 +136,7 @@ const UserDashBoard = ({
                   className={user.blog ? "" : "not-available"}
                   href={`${user.blog}`}
                 >
-                  {user.blog ? user.blog : "Not Available"}
+                  {`${userBlog}`}
                 </a>
               </p>
             </li>

@@ -63,12 +63,22 @@ button:focus {
   color: var(--grey-light-mode);
   background-color: var(--main-bg-light-mode);
   border: none;
+  cursor: pointer;
 }
 
 .dark-mode-button > button:hover {
   color: var(--black-light-mode);
 }
 
-/* svg:hover {
-  fill: red;
-} */
+/* Tablet sizing */
+@media (max-width: 768px) {
+  .App {
+    width: 573px;
+  }
+}
+
+@media (max-width: 375px) {
+  .App {
+    width: 327px;
+  }
+}

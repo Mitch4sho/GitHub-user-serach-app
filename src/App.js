@@ -3,7 +3,8 @@ import SearchBar from "./components/SearchBar";
 import UserDashBoard from "./components/UserDashboard";
 import "./App.css";
 /*
-- have a global state
+TODO:
+  - refactor the grid styling so it works well with other responsive formats
 */
 
 const getDate = (date) => {
