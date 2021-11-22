@@ -1,10 +1,13 @@
-import React, { useState } from "react";
+import React from "react";
 import "../styles/searchBar.css";
 import MagnifyGlass from "../assets/icon-search.svg";
 
-const SearchBar = ({ onSearch, userNotFound }) => {
-  const [username, setUsername] = useState("");
-
+const SearchBar = ({
+  onSearch,
+  userNotFound,
+  currentUsername,
+  setUsername,
+}) => {
   return (
     <div className="search-bar">
       <form>
@@ -19,7 +22,7 @@ const SearchBar = ({ onSearch, userNotFound }) => {
             type="text"
             placeholder="Search Github username..."
             name="searchbox"
-            value={username}
+            value={currentUsername}
             onChange={(e) => setUsername(e.target.value)}
           />
         </div>
@@ -28,7 +31,7 @@ const SearchBar = ({ onSearch, userNotFound }) => {
           <button
             className="search-button"
             onClick={(e) => {
-              onSearch(e, username);
+              onSearch(e, currentUsername);
               setUsername("");
             }}
           >

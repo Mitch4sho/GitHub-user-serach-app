@@ -20,6 +20,7 @@ function App() {
     company: "Tesla",
   });
   const [userNotFound, setUserNotFound] = useState(false);
+  const [username, setUsername] = useState("");
 
   const search = (e, username) => {
     e.preventDefault();
@@ -28,12 +29,11 @@ function App() {
     })
       .then((response) => response.json())
       .then((response) => {
-        if (response.message !== "Not Found") {
+        if (response.message === "Not Found") {
+          setUserNotFound(true);
+        } else {
           setCurrentUser(response);
           setUserNotFound(false);
-        } else {
-          setCurrentUser(currentUser);
-          setUserNotFound(true);
         }
       })
       .catch((err) => {
@@ -49,7 +49,12 @@ function App() {
           <button>Dark</button>
         </div>
       </div>
-      <SearchBar onSearch={search} userNotFound={userNotFound} />
+      <SearchBar
+        onSearch={search}
+        currentUsername={username}
+        setUsername={setUsername}
+        userNotFound={userNotFound}
+      />
       <UserDashBoard user={currentUser} />
     </div>
   );

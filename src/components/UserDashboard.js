@@ -67,10 +67,10 @@ const UserDashBoard = ({ user }) => {
         </li>
         <li>
           <p>
-            <img src={WorkIcon} alt="" />
-            <a className={user.company ? "" : "not-available"} href="">
+            <img src={WorkIcon} alt="companyIcon" />
+            <span className={user.company ? "" : "not-available"}>
               {user.company ? user.company : "Not Available"}
-            </a>
+            </span>
           </p>
         </li>
       </ul>
