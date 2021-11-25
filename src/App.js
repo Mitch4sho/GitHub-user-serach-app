@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import SearchBar from "./components/SearchBar";
-import UserDashBoard from "./components/UserDashboard";
+import UserDashBoard from "./components/user_dashboard/UserDashboard";
 import Doge from "./assets/qZduXAEoyN41zQ223nXn0BgevlbnaobL0awPmBspcgw.jpg";
 import "./App.css";
 
@@ -55,7 +55,7 @@ function App() {
         setUsername={setUsername}
         userNotFound={userNotFound}
       />
-      <UserDashBoard user={currentUser} />
+      <UserDashBoard {...currentUser} />
     </div>
   );
 }

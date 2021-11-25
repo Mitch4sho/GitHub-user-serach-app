@@ -1,5 +1,5 @@
-const getDate = (date) => {
-    const months = [
+export function getDate(date) {
+    const MONTHS = [
         "Jan",
         "Feb",
         "Mar",
@@ -14,9 +14,12 @@ const getDate = (date) => {
         "Dec",
     ];
     const year = new Date(date).getFullYear();
-    const month = months[new Date(date).getMonth()];
+    const month = MONTHS[new Date(date).getMonth()];
     const day = new Date(date).getDate();
-    return [year, month, day];
+    return { year, month, day };
 };
 
-export default getDate;
+export default function formatUserJoinDate(date) {
+    const { year, month, day } = getDate(date);
+    return `Joined ${day} ${month} ${year}`;
+}
