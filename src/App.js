@@ -55,7 +55,7 @@ function App() {
         setUsername={setUsername}
         userNotFound={userNotFound}
       />
-      <UserDashBoard {...currentUser} />
+      <UserDashBoard user={currentUser} />
     </div>
   );
 }

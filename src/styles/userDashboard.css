@@ -117,7 +117,7 @@ li {
   font-style: normal;
 }
 
-.grid-container {
+.more-info-container {
   grid-column: 2 / 3;
 
   display: grid;
@@ -129,7 +129,7 @@ li {
   column-gap: 15px;
 }
 
-.grid-container > li > p {
+.more-info-container > li > p {
   color: var(--dark-blue-light-mode);
 
   display: flex;
@@ -137,20 +137,20 @@ li {
   gap: 20px;
 }
 
-.grid-container > li > p > img {
+.more-info-container > li > p > img {
   width: auto;
   height: 20px;
   color: var(--dark-blue-light-mode);
 }
 
-.grid-container > li > p > a {
+.more-info-container > li > p > a {
   width: auto;
   height: 20px;
   color: var(--dark-blue-light-mode);
   text-decoration: none;
 }
 
-.grid-container > li > p > a:hover {
+.more-info-container > li > p > a:hover {
   color: var(--dark-blue-light-mode);
   text-decoration: underline;
 }
