@@ -1,8 +1,18 @@
 import React from "react";
+import { formatBlogLink } from "../../../utilities";
+import { MoreInfoContainerStyled } from "./MoreInfoContainer.styled";
+import { ThemeProvider } from "styled-components";
+import IconComponent from "./IconComponent";
 import LocationIcon from "../..//../assets/icon-location.svg";
 import TwitterIcon from "../..//../assets/icon-twitter.svg";
 import LinkIcon from "../..//../assets/icon-website.svg";
 import WorkIcon from "../..//../assets/icon-company.svg";
+
+const theme = {
+  lightTheme: {
+    darkBlue: "#4b6a9b",
+  },
+};
 
 export default function MoreInfoContainer({
   location,
@@ -10,39 +20,16 @@ export default function MoreInfoContainer({
   blog,
   company,
 }) {
-  const userBlog = blog ? blog.split("//")[1] : "Not Available";
+  blog = formatBlogLink(blog);
+
   return (
-    <ul className="more-info-container">
-      <li>
-        <p className={location ? "" : "not-available"}>
-          <img src={LocationIcon} alt="" />
-          {location ? location : "Not Available"}
-        </p>
-      </li>
-      <li>
-        <p>
-          <img src={TwitterIcon} alt="" />
-          <span className={twitter_username ? "" : "not-available"}>
-            {twitter_username ? `@${twitter_username}` : "Not Available"}
-          </span>
-        </p>
-      </li>
-      <li>
-        <p>
-          <img src={LinkIcon} alt="" />
-          <a className={blog ? "" : "not-available"} href={`${blog}`}>
-            {`${userBlog}`}
-          </a>
-        </p>
-      </li>
-      <li>
-        <p>
-          <img src={WorkIcon} alt="companyIcon" />
-          <span className={company ? "" : "not-available"}>
-            {company ? company : "Not Available"}
-          </span>
-        </p>
-      </li>
-    </ul>
+    <ThemeProvider theme={theme}>
+      <MoreInfoContainerStyled>
+        <IconComponent prop={location} icon={LocationIcon} />
+        <IconComponent prop={twitter_username} icon={TwitterIcon} />
+        <IconComponent prop={blog} icon={LinkIcon} />
+        <IconComponent prop={company} icon={WorkIcon} />
+      </MoreInfoContainerStyled>
+    </ThemeProvider>
   );
 }
