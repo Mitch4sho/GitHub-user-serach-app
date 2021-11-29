@@ -26,68 +26,6 @@
   gap: 32px 37px;
 }
 
-/* header information */
-.header-info {
-  display: grid;
-  grid-template-columns: auto 1fr 1fr 1fr;
-  grid-template-rows: auto auto 1fr;
-  column-gap: 37px;
-
-  grid-column: 1 / span 3;
-}
-
-.user-profile-pic {
-  width: 117px;
-  height: 117px;
-  border-radius: 50%;
-
-  grid-column: 1 / 2;
-  grid-row: 1 / -1;
-}
-
-.name {
-  margin-bottom: 2px;
-  font-size: 26px;
-  font-weight: 700;
-  font-style: normal;
-
-  align-self: flex-start;
-  grid-column: 2 / span 3;
-  grid-row: 1 / 2;
-}
-
-.username {
-  font-size: 16px;
-  font-weight: 400;
-  font-style: normal;
-  color: var(--blue-light-mode);
-
-  grid-column: 2 / 3;
-}
-
-.join-date {
-  font-size: 15px;
-  font-weight: 400;
-  font-style: normal;
-  color: var(--grey-light-mode);
-
-  align-self: center;
-  justify-self: end;
-  grid-column: 4 / span 4;
-  grid-row: 1 / 2;
-}
-
-.profile-bio {
-  margin-top: 20px;
-  font-size: 15px;
-  font-weight: 400;
-  font-style: normal;
-  color: var(--grey-light-mode);
-
-  grid-column: 2 / span 3;
-  grid-row: 3 / span 5;
-}
-
 li {
   list-style: none;
 }
@@ -162,65 +100,12 @@ li {
     flex-direction: column;
     gap: 32px;
   }
-
-  .header-info {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: auto auto auto 1fr;
-    row-gap: 4px;
-  }
-
-  .name {
-    grid-row: 1 / 2;
-  }
-
-  .username {
-    grid-row: 2 / 3;
-  }
-
-  .join-date {
-    grid-column: 2 / span 2;
-    grid-row: 3 / 4;
-    justify-self: unset;
-  }
-
-  .profile-bio {
-    margin-top: 38px;
-    grid-column: 1 / span 3;
-    grid-row: 4 / 4;
-  }
 }
 
 /* Phone sizing */
 @media only screen and (min-width: 320px) and (max-width: 600px) {
   .dashboard {
     padding: 32px 24px;
-  }
-
-  .header-info {
-    column-gap: 19px;
-  }
-
-  .user-profile-pic {
-    width: 70px;
-    height: 70px;
-  }
-
-  .name {
-    font-size: 16px;
-  }
-
-  .username {
-    font-size: 13px;
-  }
-
-  .join-date {
-    font-size: 13px;
-  }
-
-  .profile-bio {
-    margin-top: 30px;
-    grid-column: 1 / span 4;
   }
 
   .info-container {

@@ -1,8 +1,8 @@
 import React from "react";
-import LocationIcon from "../..//assets/icon-location.svg";
-import TwitterIcon from "../..//assets/icon-twitter.svg";
-import LinkIcon from "../..//assets/icon-website.svg";
-import WorkIcon from "../..//assets/icon-company.svg";
+import LocationIcon from "../..//../assets/icon-location.svg";
+import TwitterIcon from "../..//../assets/icon-twitter.svg";
+import LinkIcon from "../..//../assets/icon-website.svg";
+import WorkIcon from "../..//../assets/icon-company.svg";
 
 export default function MoreInfoContainer({
   location,

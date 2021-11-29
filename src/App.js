@@ -4,21 +4,23 @@ import UserDashBoard from "./components/user_dashboard/UserDashboard";
 import Doge from "./assets/qZduXAEoyN41zQ223nXn0BgevlbnaobL0awPmBspcgw.jpg";
 import "./App.css";
 
+const DEFAULT_USER = {
+  avatar_url: `${Doge}`,
+  name: "Doge",
+  login: "dogeman",
+  created_at: "2011-02-19T10:56:13Z",
+  bio: "Will Dogecoin hit $1",
+  public_repos: "0",
+  followers: "3998",
+  following: "9",
+  location: "San Francisco",
+  twitter_username: "dogecoin",
+  blog: "https://dogecoin.com",
+  company: "Tesla",
+};
+
 function App() {
-  const [currentUser, setCurrentUser] = useState({
-    avatar_url: `${Doge}`,
-    name: "Doge",
-    login: "dogeman",
-    created_at: "2011-02-19T10:56:13Z",
-    bio: "Will Dogecoin hit $1",
-    public_repos: "0",
-    followers: "3998",
-    following: "9",
-    location: "San Francisco",
-    twitter_username: "dogecoin",
-    blog: "https://dogecoin.com",
-    company: "Tesla",
-  });
+  const [currentUser, setCurrentUser] = useState(DEFAULT_USER);
   const [userNotFound, setUserNotFound] = useState(false);
   const [username, setUsername] = useState("");
 
