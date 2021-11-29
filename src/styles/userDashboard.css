@@ -30,31 +30,6 @@ li {
   list-style: none;
 }
 
-.info-container {
-  background-color: var(--main-bg-light-mode);
-  border-radius: 15px;
-  padding: 15px 86px 17px 32px;
-
-  grid-column: 2 / 3;
-
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.info-container .title {
-  color: var(--dark-blue-light-mode);
-  font-size: 13px;
-  font-weight: 400;
-}
-
-.info-container .value {
-  color: var(--black-light-mode);
-  font-size: 22px;
-  font-weight: 700;
-  font-style: normal;
-}
-
 .more-info-container {
   grid-column: 2 / 3;
 
@@ -106,17 +81,6 @@ li {
 @media only screen and (min-width: 320px) and (max-width: 600px) {
   .dashboard {
     padding: 32px 24px;
-  }
-
-  .info-container {
-    padding: 18px 14px;
-    justify-content: space-around;
-  }
-
-  .info-container > li {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
   }
 
   .grid-container {
