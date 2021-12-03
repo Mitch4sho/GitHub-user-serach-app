@@ -1,7 +1,8 @@
+import React from "react";
 import styled from "styled-components";
 
-export const InfoContainerStyled = styled.ul`
-  background-color: ${({ theme }) => theme.lightTheme.mainBG};
+const InfoContainerStyled = styled.ul`
+  background-color: #f6f8ff;
   border-radius: 15px;
   padding: 15px 86px 17px 32px;
 
@@ -12,13 +13,13 @@ export const InfoContainerStyled = styled.ul`
   align-items: center;
 
   p {
-    color: ${({ theme }) => theme.lightTheme.darkBlue};
+    color: #4b6a9b;
     font-size: 13px;
     font-weight: 400;
   }
 
   li > p:nth-child(2) {
-    color: ${({ theme }) => theme.lightTheme.black};
+    color: #2b3442;
     font-size: 22px;
     font-weight: 700;
     font-style: normal;
@@ -35,3 +36,22 @@ export const InfoContainerStyled = styled.ul`
     }
   }
 `;
+
+export default function InfoContainer({ public_repos, followers, following }) {
+  return (
+    <InfoContainerStyled>
+      <li>
+        <p>Repos</p>
+        <p>{public_repos}</p>
+      </li>
+      <li>
+        <p>Followers</p>
+        <p>{followers}</p>
+      </li>
+      <li>
+        <p>Following</p>
+        <p>{following}</p>
+      </li>
+    </InfoContainerStyled>
+  );
+}

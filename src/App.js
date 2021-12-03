@@ -1,8 +1,37 @@
 import React, { useState } from "react";
-import SearchBar from "./components/SearchBar";
+import MainHeader from "./components/MainHeader";
+import SearchBar from "./components/search_bar/SearchBar";
 import UserDashBoard from "./components/user_dashboard/UserDashboard";
+import styled from "styled-components";
 import Doge from "./assets/qZduXAEoyN41zQ223nXn0BgevlbnaobL0awPmBspcgw.jpg";
-import "./App.css";
+
+const AppStyled = styled.div`
+  input:focus,
+  select:focus,
+  textarea:focus,
+  button:focus {
+    outline: none;
+  }
+
+  width: 730px;
+  height: 100vh;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: "Space Mono", monospace;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  @media only screen and (max-width: 768px) {
+    width: 573px;
+  }
+
+  @media only screen and (min-width: 320px) and (max-width: 600px) {
+    width: 327px;
+    display: block;
+  }
+`;
 
 const DEFAULT_USER = {
   avatar_url: `${Doge}`,
@@ -44,13 +73,8 @@ function App() {
   };
 
   return (
-    <div className="App">
-      <div className="title-container">
-        <h1 className="title">devfinder</h1>
-        <div className="dark-mode-button">
-          <button>Dark</button>
-        </div>
-      </div>
+    <AppStyled>
+      <MainHeader />
       <SearchBar
         onSearch={search}
         currentUsername={username}
@@ -58,7 +82,7 @@ function App() {
         userNotFound={userNotFound}
       />
       <UserDashBoard user={currentUser} />
-    </div>
+    </AppStyled>
   );
 }
 
