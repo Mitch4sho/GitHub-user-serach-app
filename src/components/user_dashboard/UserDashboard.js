@@ -1,6 +1,6 @@
 import React from "react";
-import DashBoardHeader from "./dashboard_header/DashBoardHeader";
-import InfoContainer from "./Info_container/InfoContainer";
+import DashBoardHeader from "./DashBoardHeader";
+import InfoContainer from "./InfoContainer";
 import MoreInfoContainer from "./more_info_contianer/MoreInfoContainer";
 import { ThemeProvider } from "styled-components";
 import { UserDashBoardStyled } from "./UserDashBoard.styled";
