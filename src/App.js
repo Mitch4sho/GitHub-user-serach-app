@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import SearchBar from "./components/SearchBar";
+import SearchBar from "./components/search_bar/SearchBar";
 import UserDashBoard from "./components/user_dashboard/UserDashboard";
 import Doge from "./assets/qZduXAEoyN41zQ223nXn0BgevlbnaobL0awPmBspcgw.jpg";
 import "./App.css";
