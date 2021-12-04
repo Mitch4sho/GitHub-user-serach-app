@@ -49,7 +49,6 @@ const TitleWrapper = styled.header`
       color: ${(props) => props.theme.themeTogglerColorHover};
     }
   }
-  }
 
   @media only screen and (min-width: 320px) and (max-width: 600px) {
     margin-top: 32px;
