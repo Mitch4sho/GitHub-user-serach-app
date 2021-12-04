@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 const InfoContainerStyled = styled.ul`
-  background-color: #f6f8ff;
+  background-color: ${(props) => props.theme.body};
   border-radius: 15px;
   padding: 15px 86px 17px 32px;
 
@@ -13,13 +13,13 @@ const InfoContainerStyled = styled.ul`
   align-items: center;
 
   p {
-    color: #4b6a9b;
+    color: ${(props) => props.theme.fontColor};
     font-size: 13px;
     font-weight: 400;
   }
 
   li > p:nth-child(2) {
-    color: #2b3442;
+    color: ${(props) => props.theme.titleColor};
     font-size: 22px;
     font-weight: 700;
     font-style: normal;

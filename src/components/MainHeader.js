@@ -1,5 +1,7 @@
 import React from "react";
 import styled from "styled-components";
+import MoonIcon from "../assets/MoonIcon";
+import SunIcon from "../assets/SunIcon";
 
 const TitleWrapper = styled.header`
   display: flex;
@@ -10,23 +12,25 @@ const TitleWrapper = styled.header`
     font-weight: 700;
     font-style: normal;
     font-size: 26px;
-    color: #2b3442;
+    color: ${(props) => props.theme.titleColor};
   }
 
   button {
-    width: 40px;
     height: 19px;
     font-weight: 700;
     font-style: normal;
     font-size: 14px;
     font-family: "Space Mono", monospace;
-    color: #697c9a;
-    background-color: #f6f8ff;
+    color: ${(props) => props.theme.themeTogglerColor};
+    background-color: ${(props) => props.theme.body};
     border: none;
     cursor: pointer;
 
+    display: flex;
+    gap: 16px;
+
     &:hover {
-      color: #2b3442;
+      color: ${(props) => props.theme.themeTogglerColorHover};
     }
   }
 
@@ -35,13 +39,15 @@ const TitleWrapper = styled.header`
   }
 `;
 
-export default function MainHeader() {
+export default function MainHeader({ themeToggler, theme }) {
+  const buttonTheme = theme === "light" ? "DARK" : "LIGHT";
   return (
     <TitleWrapper>
       <h1>devfinder</h1>
-      <div>
-        <button>Dark</button>
-      </div>
+      <button onClick={() => themeToggler()}>
+        {buttonTheme}
+        {theme === "light" ? <MoonIcon /> : <SunIcon />}
+      </button>
     </TitleWrapper>
   );
 }

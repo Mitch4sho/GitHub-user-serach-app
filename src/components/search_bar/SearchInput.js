@@ -22,6 +22,10 @@ const SearchBoxWrapper = styled.div`
     font-style: normal;
     border-style: none;
     color: #0079ff;
+    background-color: ${(props) => props.theme.dashBoardColor};
+    ::placeholder {
+      color: ${(props) => props.theme.fontColor};
+    }
     &: hover {
       cursor: pointer;
     }

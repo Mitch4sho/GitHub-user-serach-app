@@ -1,11 +1,10 @@
 import React from "react";
 import { formatBlogLink } from "../../../utilities";
+import CompanyIcon from "../../../assets/CompanyIcon";
+import LocationIcon from "../../../assets/LocationIcon";
+import TwitterIcon from "../../../assets/TwitterIcon";
+import WebsiteIcon from "../../../assets/WebsiteIcon";
 import styled from "styled-components";
-import IconComponent from "./IconComponent";
-import LocationIcon from "../..//../assets/icon-location.svg";
-import TwitterIcon from "../..//../assets/icon-twitter.svg";
-import LinkIcon from "../..//../assets/icon-website.svg";
-import WorkIcon from "../..//../assets/icon-company.svg";
 
 const MoreInfoContainerStyled = styled.ul`
   grid-column: 2 / 3;
@@ -15,18 +14,18 @@ const MoreInfoContainerStyled = styled.ul`
   row-gap: 19px;
   column-gap: 15px;
 
-  li > p {
-    color: #4b6a9b;
-
+  li {
     display: flex;
     align-items: center;
     gap: 20px;
   }
 
-  li > p > img {
-    color: #4b6a9b;
-    width: auto;
-    height: 20px;
+  li > p {
+    color: ${(props) => props.theme.fontColor};
+  }
+
+  path {
+    fill: ${(props) => props.theme.fontColor};
   }
 
   @media only screen and (min-width: 320px) and (max-width: 600px) {
@@ -46,10 +45,22 @@ export default function MoreInfoContainer({
 
   return (
     <MoreInfoContainerStyled>
-      <IconComponent prop={location} icon={LocationIcon} />
-      <IconComponent prop={twitter_username} icon={TwitterIcon} />
-      <IconComponent prop={blog} icon={LinkIcon} />
-      <IconComponent prop={company} icon={WorkIcon} />
+      <li>
+        <LocationIcon />
+        <p>{location ? location : "Not available"}</p>
+      </li>
+      <li>
+        <TwitterIcon />
+        <p>{twitter_username ? `@${twitter_username}` : "Not available"}</p>
+      </li>
+      <li>
+        <WebsiteIcon />
+        <p>{blog ? blog : "Not available"}</p>
+      </li>
+      <li>
+        <CompanyIcon />
+        <p>{company ? company : "Not available"}</p>
+      </li>
     </MoreInfoContainerStyled>
   );
 }

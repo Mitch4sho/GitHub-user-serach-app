@@ -33,6 +33,7 @@ const Name = styled.p`
   margin-bottom: 2px;
   font-size: 26px;
   font-weight: 700;
+  color: ${(props) => props.theme.titleColor};
 
   @media (max-width: 768px) {
     grid-column: 2 / span 3;
@@ -60,7 +61,7 @@ const JoinDate = styled.p`
   font-size: 15px;
   font-weight: 400;
   font-style: normal;
-  color: var(--grey-light-mode);
+  color: ${(props) => props.theme.fontColor};
 
   justify-self: end;
   grid-column: 3 / span 3;
@@ -82,7 +83,7 @@ const ProfileBio = styled.p`
   font-size: 15px;
   font-weight: 400;
   font-style: normal;
-  color: var(--grey-light-mode);
+  color: ${(props) => props.theme.fontColor};
 
   grid-column: 2 / span 3;
 
@@ -110,7 +111,7 @@ export default function DashBoardHeader({
 
   return (
     <HeaderContainer>
-      <img src={avatar_url} />
+      <img src={avatar_url} alt="ProfilePhoto" />
       <Name>{name}</Name>
       <UserName>
         <a href={html_url}>@{login}</a>

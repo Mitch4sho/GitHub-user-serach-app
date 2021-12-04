@@ -4,13 +4,14 @@ import SearchButton from "./SearchButton";
 import styled from "styled-components";
 
 const SearchBarContainer = styled.div`
-  background-color: #fefefe;
+  background-color: ${(props) => props.theme.dashBoardColor};
   margin-bottom: 30px;
   padding: 18px;
   text-align: center;
   font-family: "Space Mono", monospace;
   border-radius: 15px;
-  box-shadow: 0px 16px 30px -10px rgba(70, 96, 187, 0.198567);
+  box-shadow: ${(props) => props.theme.boxShadow};
+  filter: ${(props) => props.theme.dropShadow};
 
   form {
     display: flex;
