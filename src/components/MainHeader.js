@@ -15,22 +15,6 @@ const TitleWrapper = styled.header`
     color: ${(props) => props.theme.titleColor};
   }
 
-  div {
-    display: flex;
-    gap: 16px;
-
-    &:hover {
-      cursor: pointer;
-      path: {
-        fill: orange;
-      }
-
-      button {
-        color: ${(props) => props.theme.themeTogglerColorHover};
-      }
-    }
-  }
-
   button {
     height: 19px;
     font-weight: 700;
