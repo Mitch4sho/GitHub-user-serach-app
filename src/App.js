@@ -3,6 +3,8 @@ import MainHeader from "./components/MainHeader";
 import SearchBar from "./components/search_bar/SearchBar";
 import UserDashBoard from "./components/user_dashboard/UserDashboard";
 import styled from "styled-components";
+import { ThemeProvider } from "styled-components";
+import { lightTheme, darkTheme, GlobalStyles } from "./theme";
 import Doge from "./assets/qZduXAEoyN41zQ223nXn0BgevlbnaobL0awPmBspcgw.jpg";
 
 const AppStyled = styled.div`
@@ -52,6 +54,11 @@ function App() {
   const [currentUser, setCurrentUser] = useState(DEFAULT_USER);
   const [userNotFound, setUserNotFound] = useState(false);
   const [username, setUsername] = useState("");
+  const [theme, setTheme] = useState("light");
+
+  const themeToggler = () => {
+    theme === "light" ? setTheme("dark") : setTheme("light");
+  };
 
   const search = (e, username) => {
     e.preventDefault();
@@ -73,16 +80,19 @@ function App() {
   };
 
   return (
-    <AppStyled>
-      <MainHeader />
-      <SearchBar
-        onSearch={search}
-        currentUsername={username}
-        setUsername={setUsername}
-        userNotFound={userNotFound}
-      />
-      <UserDashBoard user={currentUser} />
-    </AppStyled>
+    <ThemeProvider theme={theme === "light" ? lightTheme : darkTheme}>
+      <GlobalStyles />
+      <AppStyled>
+        <MainHeader themeToggler={themeToggler} theme={theme} />
+        <SearchBar
+          onSearch={search}
+          currentUsername={username}
+          setUsername={setUsername}
+          userNotFound={userNotFound}
+        />
+        <UserDashBoard user={currentUser} />
+      </AppStyled>
+    </ThemeProvider>
   );
 }
 

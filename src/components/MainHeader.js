@@ -10,7 +10,7 @@ const TitleWrapper = styled.header`
     font-weight: 700;
     font-style: normal;
     font-size: 26px;
-    color: #2b3442;
+    color: ${(props) => props.theme.titleColor};
   }
 
   button {
@@ -20,13 +20,13 @@ const TitleWrapper = styled.header`
     font-style: normal;
     font-size: 14px;
     font-family: "Space Mono", monospace;
-    color: #697c9a;
-    background-color: #f6f8ff;
+    color: ${(props) => props.theme.themeTogglerColor};
+    background-color: ${(props) => props.theme.body};
     border: none;
     cursor: pointer;
 
     &:hover {
-      color: #2b3442;
+      color: ${(props) => props.theme.themeTogglerColorHover};
     }
   }
 
@@ -35,12 +35,13 @@ const TitleWrapper = styled.header`
   }
 `;
 
-export default function MainHeader() {
+export default function MainHeader({ themeToggler, theme }) {
+  const buttonTheme = theme === "light" ? "Dark" : "Light";
   return (
     <TitleWrapper>
       <h1>devfinder</h1>
       <div>
-        <button>Dark</button>
+        <button onClick={() => themeToggler()}>{buttonTheme}</button>
       </div>
     </TitleWrapper>
   );
