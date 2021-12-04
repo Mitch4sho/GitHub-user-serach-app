@@ -111,7 +111,7 @@ export default function DashBoardHeader({
 
   return (
     <HeaderContainer>
-      <img src={avatar_url} />
+      <img src={avatar_url} alt="ProfilePhoto" />
       <Name>{name}</Name>
       <UserName>
         <a href={html_url}>@{login}</a>
