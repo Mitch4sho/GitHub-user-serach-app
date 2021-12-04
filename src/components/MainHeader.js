@@ -1,5 +1,7 @@
 import React from "react";
 import styled from "styled-components";
+import MoonIcon from "../assets/MoonIcon";
+import SunIcon from "../assets/SunIcon";
 
 const TitleWrapper = styled.header`
   display: flex;
@@ -13,8 +15,23 @@ const TitleWrapper = styled.header`
     color: ${(props) => props.theme.titleColor};
   }
 
+  div {
+    display: flex;
+    gap: 16px;
+
+    &:hover {
+      cursor: pointer;
+      path: {
+        fill: orange;
+      }
+
+      button {
+        color: ${(props) => props.theme.themeTogglerColorHover};
+      }
+    }
+  }
+
   button {
-    width: 40px;
     height: 19px;
     font-weight: 700;
     font-style: normal;
@@ -25,9 +42,13 @@ const TitleWrapper = styled.header`
     border: none;
     cursor: pointer;
 
+    display: flex;
+    gap: 16px;
+
     &:hover {
       color: ${(props) => props.theme.themeTogglerColorHover};
     }
+  }
   }
 
   @media only screen and (min-width: 320px) and (max-width: 600px) {
@@ -36,13 +57,14 @@ const TitleWrapper = styled.header`
 `;
 
 export default function MainHeader({ themeToggler, theme }) {
-  const buttonTheme = theme === "light" ? "Dark" : "Light";
+  const buttonTheme = theme === "light" ? "DARK" : "LIGHT";
   return (
     <TitleWrapper>
       <h1>devfinder</h1>
-      <div>
-        <button onClick={() => themeToggler()}>{buttonTheme}</button>
-      </div>
+      <button onClick={() => themeToggler()}>
+        {buttonTheme}
+        {theme === "light" ? <MoonIcon /> : <SunIcon />}
+      </button>
     </TitleWrapper>
   );
 }
